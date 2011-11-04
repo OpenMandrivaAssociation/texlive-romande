@@ -5,7 +5,7 @@
 # catalog-license lppl
 # catalog-version 1.008-v7
 Name:		texlive-romande
-Version:	1.008.v7
+Version:	1.008-v7
 Release:	1
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
@@ -158,6 +158,7 @@ nfssext-cfr and the xkeyval packages.
 %doc %{_texmfdistdir}/source/fonts/romande/ts1-euro.etx
 %doc %{_texmfdistdir}/source/fonts/romande/yrd-drv.tex
 %doc %{_texmfdistdir}/source/fonts/romande/yrd-map.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -168,3 +169,5 @@ nfssext-cfr and the xkeyval packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
