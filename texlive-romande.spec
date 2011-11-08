@@ -5,7 +5,7 @@
 # catalog-license lppl
 # catalog-version 1.008-v7
 Name:		texlive-romande
-Version:	1.008-v7
+Version:	1.008v7
 Release:	1
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
@@ -16,7 +16,8 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.doc.tar.x
 Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-kpathsea
 Conflicts:	texlive-texmf <= 20110705-3
 Conflicts:	texlive-doc <= 20110705-3
 Conflicts:	texlive-source <= 20110705-3
