@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Romande ADF is a serif font family with oldstyle figures,
@@ -36,20 +33,12 @@ package files provide access to these features in LaTeX as
 explained in the documentation. The LaTeX support requires the
 nfssext-cfr and the xkeyval packages.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -159,7 +148,6 @@ nfssext-cfr and the xkeyval packages.
 %doc %{_texmfdistdir}/source/fonts/romande/ts1-euro.etx
 %doc %{_texmfdistdir}/source/fonts/romande/yrd-drv.tex
 %doc %{_texmfdistdir}/source/fonts/romande/yrd-map.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -170,5 +158,3 @@ nfssext-cfr and the xkeyval packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
