@@ -158,3 +158,17 @@ nfssext-cfr and the xkeyval packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.008v7-2
++ Revision: 755721
+- Rebuild to reduce used resources
+
+* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.008v7-1
++ Revision: 729128
+- texlive-romande
+- texlive-romande
+- texlive-romande
+- texlive-romande
+
