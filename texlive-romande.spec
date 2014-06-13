@@ -6,7 +6,7 @@
 # catalog-version 1.008-v7
 Name:		texlive-romande
 Version:	1.008v7
-Release:	6
+Release:	7
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/romandeadf
