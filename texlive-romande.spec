@@ -1,19 +1,13 @@
-# revision 19537
-# category Package
-# catalog-ctan /fonts/romandeadf
-# catalog-date 2010-07-14 23:31:19 +0200
-# catalog-license lppl
-# catalog-version 1.008-v7
 Name:		texlive-romande
-Version:	1.008v7
-Release:	12
+Version:	19537
+Release:	1
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/romandeadf
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -34,12 +28,12 @@ explained in the documentation. The LaTeX support requires the
 nfssext-cfr and the xkeyval packages.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -151,24 +145,11 @@ nfssext-cfr and the xkeyval packages.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.008v7-2
-+ Revision: 755721
-- Rebuild to reduce used resources
-
-* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.008v7-1
-+ Revision: 729128
-- texlive-romande
-- texlive-romande
-- texlive-romande
-- texlive-romande
-
