@@ -1,6 +1,6 @@
 Name:		texlive-romande
 Version:	19537
-Release:	1
+Release:	2
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/romandeadf
