@@ -3,7 +3,7 @@ Version:	19537
 Release:	2
 Summary:	Romande ADF fonts and LaTeX support
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/romandeadf
+URL:		https://www.ctan.org/tex-archive/fonts/romandeadf
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/romande.doc.r%{version}.tar.xz
